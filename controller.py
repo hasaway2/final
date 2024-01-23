@@ -7,9 +7,12 @@ def 목록():
   result = dao.findall()
   return f.render_template("list.html", list=result)
 
+# /read?bno=1 또는 /read?bno=2
 @app.route("/read")
 def 읽기():
-  return f.render_template("read.html")
+  bno = f.request.args.get("bno", type=int)
+  board = dao.findone(bno)
+  return f.render_template("read.html", board=board)
 
 @app.route("/write")
 def 쓰기_화면():

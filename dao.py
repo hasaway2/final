@@ -16,3 +16,9 @@ def save(title:str, content:str, nickname:str)->bool:
 def findall()->list:
   print(board_list)
   return board_list
+
+def findone(bno:int)->dict:
+  for board in board_list:
+    if board['bno']==bno:
+      return board
+  return None

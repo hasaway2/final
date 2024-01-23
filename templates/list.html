@@ -10,7 +10,9 @@
       {% for b in list %}  
       <tr>
         <td>{{b.bno}}</td>
-        <td>{{b.title}}</td>
+        <td>
+          <a href="/read?bno={{b.bno}}">{{b.title}}</a>
+        </td>
         <td>{{b.nickname}}</td>
         <td>{{b.readcnt}}</td>
       </tr>
