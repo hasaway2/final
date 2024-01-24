@@ -1,24 +1,51 @@
-<html>
-  <body>
-    <table>
-      <thead>
-        <tr>
-          <th>번호</th><th>제목</th><th>글쓴이</th><th>조회</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for board in list %}
-        <tr>
-          <td>{{board.bno }}</td>
-          <td>
-            <a href="/read?bno={{board.bno}}">{{board.title }}</a>
-          </td>
-          <td>{{board.nickname }}</td>
-          <td>{{board.readcnt }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    <a href="/write">글쓰기로</a>
-  </body>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/main.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <header>
+      ICIA Mini Board
+    </header>
+    <nav>
+      <a class="btn btn-primary" href="/">HOME</a>
+      <a class="btn btn-primary" href="/write">글작성</a>
+    </nav>
+    <main>
+      <aside></aside>
+      <section>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>번호</th><th>제목</th><th>글쓴이</th><th>작성일</th><th>조회</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for board in list %}
+            <tr>
+              <td>{{board.bno }}</td>
+              <td>
+                <a href="/read?bno={{board.bno}}">{{board.title }}</a>
+              </td>
+              <td>{{board.nickname }}</td>
+              <td>{{board.writeday }}</td>
+              <td>{{board.readcnt }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+      <aside></aside>
+    </main>
+    <footer>
+      Copyright by ICIA. All rights reserved. Since 2012
+    </footer>
+  </div>
+</body>
 </html>

@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+header, footer, nav {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border: 1px solid red;
+}
+
+main {
+  overflow: hidden;
+}
+
+aside {
+  float:left;
+  width: 100px;
+  height: 200px;
+  background-color: gray;
+}
+
+section {
+  float:left;
+  width: 1000px;
+  min-height: 600px;
+  background-color: #f1f1f1;
+}
+
+form, .table {
+  padding: 10px;
+}
+
+.btn {
+  width: 100px;
+}

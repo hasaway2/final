@@ -1,3 +1,5 @@
+import datetime
+
 # 데이터 : model
 # 모델을 다루는 클래스 : Data Access Object(DAO, 다오)
 board_list=[]
@@ -7,8 +9,9 @@ bno = 1
 
 def save(title:str, content:str, nickname:str)->bool:
   global bno
-  b = dict(bno=bno,title=title,content=content,nickname=nickname,readcnt=0)
-  board_list.append(b)
+  writeday = datetime.datetime.now().date()
+  board = dict(bno=bno, title=title, content=content, nickname=nickname, writeday=writeday, readcnt=0)
+  board_list.append(board)
   bno+=1
   return True
 
