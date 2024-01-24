@@ -1,5 +1,14 @@
 <html>
   <body>
-    {{board}}
+    <form action="/update" method="post">
+      <input type="hidden" name="bno" value="{{board.bno}}">
+      <input type="text" name="title" value="{{board.title}}">
+      <textarea name="content">{{board.content}}</textarea>
+      <button>변경</button>
+    </form>
+    <form action="/delete" method="post">
+      <input type="hidden" name="bno" value="{{board.bno}}">
+      <button>삭제</button>
+    </form>
   </body>
 </html>

@@ -7,16 +7,16 @@
         </tr>
       </thead>
       <tbody>
-      {% for b in list %}  
-      <tr>
-        <td>{{b.bno}}</td>
-        <td>
-          <a href="/read?bno={{b.bno}}">{{b.title}}</a>
-        </td>
-        <td>{{b.nickname}}</td>
-        <td>{{b.readcnt}}</td>
-      </tr>
-      {% endfor %}
+        {% for board in list %}
+        <tr>
+          <td>{{board.bno }}</td>
+          <td>
+            <a href="/read?bno={{board.bno}}">{{board.title }}</a>
+          </td>
+          <td>{{board.nickname }}</td>
+          <td>{{board.readcnt }}</td>
+        </tr>
+        {% endfor %}
       </tbody>
     </table>
     <a href="/write">글쓰기로</a>
